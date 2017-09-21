@@ -5,7 +5,6 @@
 #ifndef TEMPLATE_STACK_T_STACK_H
 #define TEMPLATE_STACK_T_STACK_H
 
-
 template <typename T> class stack
 {
 public:
@@ -26,7 +25,7 @@ private:
 template <typename T> stack<T>::stack() {
     array_size_ = 10;
     count_ = 0;
-    array_ = (T*)malloc(array_size*sizeof(T));
+    array_ = (T*)malloc(array_size_*sizeof(T));
 }
 
 template <typename T> stack<T>::stack(size_t size) {
@@ -41,7 +40,7 @@ template <typename T> void stack<T>::push(T const & el) {
         count_++;
     } else {
         array_size_*=2;
-    array_ = (T*)realloc(array_, array_size_*sizeof(T));
+        array_ = (T*)realloc(array_, array_size_*sizeof(T));
         array_[count_] = el;
         count_++;
     }
@@ -61,4 +60,5 @@ template <typename T> T stack<T>::pop() {
 template <typename T> stack<T>::~stack(){
     free(array_);
 }
+
 #endif //TEMPLATE_STACK_T_STACK_H
