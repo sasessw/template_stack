@@ -48,6 +48,7 @@ template <typename T> T stack<T>::pop() {
     if(count_ > 0) {
         T tmp = array_[count_];
         array_[count_] = NULL;
+        count_--;
         return tmp;
     } else {
         std::cerr << "pop err" << std::endl;
