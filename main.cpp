@@ -6,10 +6,10 @@
 int main() {
     try {
         stack<int> A(12);
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 40; i++) {
             A.push(12);
         }
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 43; i++) {
             A.pop();
         }
     }
