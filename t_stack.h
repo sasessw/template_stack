@@ -40,7 +40,7 @@ template <typename T> void stack<T>::push(T const & el) {
         array_[count_] = el;
         count_++;
     } else {
-        std::cerr << "push err" << std::endl;
+        throw "push exception";
     }
 }
 
@@ -51,7 +51,7 @@ template <typename T> T stack<T>::pop() {
         count_--;
         return tmp;
     } else {
-        std::cerr << "pop err" << std::endl;
+        throw "pop exception";
     }
 }
 
