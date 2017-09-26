@@ -30,15 +30,12 @@ template <typename T> stack<T>::stack(size_t size) : array_size_(size), count_(0
 }
 
 template <typename T> void stack<T>::push(T const & T_value) {
-    if (count_ != array_size_) {
-        array_[count_] = T_value;
-        count_++;
-    } else {
+    if (count_ == array_size_) {
         array_size_*=2;
         array_ = (T*)realloc(array_, array_size_*sizeof(T));
+    }
         array_[count_] = T_value;
         count_++;
-    }
 }
 
 template <typename T> T stack<T>::pop() {
